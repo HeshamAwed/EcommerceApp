@@ -9,7 +9,7 @@
     <string name="password">كلمة السر</string>
     <string name="password_error">كلمة السر غير صحيحه</string>
     <string name="don_t_have_an_account">ليس لديك حساب?</string>
-    <string name="sign_up">انشاء</string>
+    <string name="sign_up">انشاء حساب</string>
     <string name="text_sorry">"نأسف!"</string>
     <string name="error_login_message">"اسم المستخدم او كلمة المرور غير صحيحة!"</string>
     <string name="error_limit">"لقد استنفذت عدد المحاولات!"</string>
@@ -26,5 +26,12 @@
     <string name="checkout">دفع</string>
     <string name="price">السعر</string>
     <string name="total_price">اجمالي : %s</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="have_an_account">Have an Account?</string>
+    <string name="product_details">Product details</string>
+    <string name="log_out">Logout</string>
+    <string name="do_you_want_to_logout">Do you want to logout?</string>
 
 </resources>

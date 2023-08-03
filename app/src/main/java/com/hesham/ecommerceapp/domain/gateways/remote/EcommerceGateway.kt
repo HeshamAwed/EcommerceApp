@@ -20,6 +20,9 @@ interface EcommerceGateway {
     @POST("users")
     suspend fun signup(@Body user: User): User
 
+    @GET("users/{userId}")
+    suspend fun getUser(@Path("userId") userId: Int): User
+
     @GET("products/categories")
     suspend fun getAllCategories(): List<String>
 

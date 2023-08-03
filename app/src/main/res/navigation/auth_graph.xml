@@ -9,6 +9,15 @@
         android:id="@+id/loginFragment"
         android:name="com.hesham.ecommerceapp.ui.auth.login.LoginFragment"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/goToSignupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.hesham.ecommerceapp.ui.auth.signup.SignupFragment"
+        tools:layout="@layout/fragment_signup">
     </fragment>
 
 

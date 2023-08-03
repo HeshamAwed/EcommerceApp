@@ -13,7 +13,9 @@ data class User(
     @SerializedName("password")  val password: String,
     @SerializedName("phone")  val phone: String,
     @SerializedName("username")  val username: String
-): Serializable
+): Serializable{
+    fun getFullName() = "${name.firstname} ${name.lastname}"
+}
 
 @Keep
 data class Name(

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.hesham.ecommerceapp.ui.main.MainActivity
 import com.hesham.ecommerceapp.R
 import com.hesham.ecommerceapp.application.base.BaseFragment
@@ -60,7 +61,9 @@ class LoginFragment : BaseFragment() {
                 binding.editTextPassword.text.toString()
             )
         }
-        binding.buttonSignup.setOnClickListener { }
+        binding.buttonSignup.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.goToSignupFragment())
+        }
     }
 
 }

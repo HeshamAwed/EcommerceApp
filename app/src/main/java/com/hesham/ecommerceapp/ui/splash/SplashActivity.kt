@@ -27,9 +27,9 @@ class SplashActivity : AppCompatActivity() {
     private fun goToNextScreen(isLoggedIn: Boolean) {
         finish()
         if (isLoggedIn) {
-            startActivity(Intent(this, AuthenticateActivity::class.java))
-        } else {
             startActivity(Intent(this, MainActivity::class.java))
+        } else {
+            startActivity(Intent(this, AuthenticateActivity::class.java))
         }
     }
 }
