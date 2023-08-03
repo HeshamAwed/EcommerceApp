@@ -39,8 +39,9 @@ class ProfileFragment : Fragment() {
     }
 
     private fun initObservers() {
-        viewModel.logoutResultLiveData.observe(viewLifecycleOwner, ::userLoggedOut)
+        viewModel.logoutResultLiveData.observe(viewLifecycleOwner, ::restartTheApp)
         viewModel.userResultLiveData.observe(viewLifecycleOwner, ::showUserData)
+        viewModel.languageResultLiveData.observe(viewLifecycleOwner, ::restartTheApp)
         viewModel.loadingLiveData.observe(viewLifecycleOwner) {
             binding.loadingLayout.progressLayout.isVisible = it
         }
@@ -48,13 +49,12 @@ class ProfileFragment : Fragment() {
             showError(it)
         }
     }
-
     private fun showUserData(user: User) {
         binding.textName.text = user.getFullName()
         binding.textEmail.text = user.email.orEmpty()
     }
 
-    private fun userLoggedOut(b: Boolean?) {
+    private fun restartTheApp(b: Any) {
         startActivity(
             Intent(requireContext(), SplashActivity::class.java)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -63,17 +63,38 @@ class ProfileFragment : Fragment() {
 
     private fun initActions() {
         binding.buttonLogout.setOnClickListener {
-            FancyDialogBuilder(requireContext(), R.style.AppFancyDialogStyle)
-                .withImageIcon(R.drawable.ic_alert_discount)
-                .withTitle(getString(R.string.log_out))
-                .withSubTitle(getString(R.string.do_you_want_to_logout))
-                .withTitleTypeFace(R.font.bold)
-                .withSubTitleTypeFace(R.font.reguler)
-                .withPositive(android.R.string.ok) { w, d ->
-                    viewModel.logout()
-                }
-                .show()
+            showLogoutDialog()
         }
+        binding.changeLanguage.setOnClickListener {
+            showChangeLanguageDialog()
+        }
+
+    }
+
+    private fun showChangeLanguageDialog() {
+        FancyDialogBuilder(requireContext(), R.style.AppFancyDialogStyle)
+            .withImageIcon(R.drawable.ic_alert_discount)
+            .withTitle(getString(R.string.change_language))
+            .withSubTitle(getString(R.string.do_you_want_to_change_language))
+            .withTitleTypeFace(R.font.bold)
+            .withSubTitleTypeFace(R.font.reguler)
+            .withPositive(android.R.string.ok) { w, d ->
+                viewModel.changeLanguage()
+            }
+            .show()
+    }
+
+    private fun showLogoutDialog() {
+        FancyDialogBuilder(requireContext(), R.style.AppFancyDialogStyle)
+            .withImageIcon(R.drawable.ic_alert_discount)
+            .withTitle(getString(R.string.log_out))
+            .withSubTitle(getString(R.string.do_you_want_to_logout))
+            .withTitleTypeFace(R.font.bold)
+            .withSubTitleTypeFace(R.font.reguler)
+            .withPositive(android.R.string.ok) { w, d ->
+                viewModel.logout()
+            }
+            .show()
     }
 
     override fun onResume() {

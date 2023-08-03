@@ -20,6 +20,8 @@ interface AuthRepository {
     fun getUserId(): Int
     fun setUserId(userId: Int)
     fun setToken(token: String)
+    fun changeLanguage()
+    fun getCurrentLanguage() :String
 }
 
 class AuthRepositoryImplementation(
@@ -50,5 +52,7 @@ class AuthRepositoryImplementation(
     }
 
     override fun setToken(token: String) = localGateway.setToken(token)
+    override fun changeLanguage() = localGateway.changeLanguage()
+    override fun getCurrentLanguage() = localGateway.getCurrentLanguage()
 
 }

@@ -2,6 +2,7 @@ package com.hesham.ecommerceapp.domain.gateways.local
 
 import android.content.SharedPreferences
 import com.auth0.android.jwt.JWT
+import com.hesham.ecommerceapp.utils.Constants
 
 
 interface LocalGateway {
@@ -9,6 +10,8 @@ interface LocalGateway {
     fun setToken(token: String)
     fun setUserId(userId: Int)
     fun getUserId(): Int
+    fun changeLanguage()
+    fun getCurrentLanguage(): String
     fun logout()
 
 
@@ -41,6 +44,24 @@ class LocalGatewayImplementation(
 
     override fun getUserId(): Int {
         return sharedPreferences.getInt(USER_ID, 0)
+    }
+
+    override fun changeLanguage() {
+        val lang = getCurrentLanguage()
+        if (lang == Constants.LANG_AR) {
+            sharedPreferences.edit()
+                .putString(Constants.LANGUAGE_KEY, Constants.LANG_EN)
+                .apply()
+        } else {
+            sharedPreferences.edit()
+                .putString(Constants.LANGUAGE_KEY, Constants.LANG_AR)
+                .apply()
+        }
+    }
+
+    override fun getCurrentLanguage(): String {
+        return sharedPreferences.getString(Constants.LANGUAGE_KEY, Constants.LANG_EN)
+            ?: Constants.LANG_EN
     }
 
     override fun logout() {

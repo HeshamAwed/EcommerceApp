@@ -3,12 +3,13 @@ package com.hesham.ecommerceapp.ui.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hesham.ecommerceapp.application.base.BaseActivity
 import com.hesham.ecommerceapp.ui.main.MainActivity
 import com.hesham.ecommerceapp.databinding.ActivitySplashBinding
 import com.hesham.ecommerceapp.ui.auth.AuthenticateActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
 
     private val viewModel by viewModel<SplashViewModel>()
     lateinit var binding: ActivitySplashBinding

@@ -18,6 +18,9 @@ class ProfileViewModel(private val authRepository: AuthRepository) : BaseViewMod
     private val _userResultLiveData: SingleLiveEvent<User> = SingleLiveEvent()
     val userResultLiveData: LiveData<User> = _userResultLiveData
 
+    private val _languageResultLiveData: SingleLiveEvent<String> = SingleLiveEvent()
+    val languageResultLiveData: LiveData<String> = _languageResultLiveData
+
 
     fun getUserData(){
         launchDataLoad(
@@ -29,6 +32,10 @@ class ProfileViewModel(private val authRepository: AuthRepository) : BaseViewMod
     fun logout() {
         authRepository.logout()
         _logoutResultLiveData.postValue(true)
+    }
+    fun changeLanguage() {
+        authRepository.changeLanguage()
+        _languageResultLiveData.postValue(authRepository.getCurrentLanguage())
     }
 
 

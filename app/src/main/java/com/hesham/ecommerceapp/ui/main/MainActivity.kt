@@ -9,11 +9,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.hesham.ecommerceapp.R
+import com.hesham.ecommerceapp.application.base.BaseActivity
 import com.hesham.ecommerceapp.databinding.ActivityMainBinding
 import com.hesham.ecommerceapp.ui.home.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private val viewModel: MainViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
     private lateinit var navView: BottomNavigationView
