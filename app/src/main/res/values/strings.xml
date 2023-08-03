@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">EcommerceApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_profile">Profile</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="username_error">Username Error</string>
+    <string name="password">Password</string>
+    <string name="password_error">Password Error</string>
+    <string name="don_t_have_an_account">Don\'t Have an Account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="text_sorry">"Sorry!"</string>
+    <string name="error_login_message">"Username or password is not correct!"</string>
+    <string name="error_limit">"You have exceeded the limit of inquiries!"</string>
+    <string name="error_record_is_expired">"Record is expired"</string>
+    <string name="text_message_forbidden">"Maximum requests reached. Please try again later."</string>
+    <string name="text_message_record_exist">"This record is already exist"</string>
+    <string name="text_message_internal_server_error">"Internal Server error"</string>
+    <string name="text_message_unauthorized">"You are not logged in yet. Please try to login again."</string>
+    <string name="error_not_founded_exception">"Not Founded!"</string>
+    <string name="text_message_generic_error">"Something wrong happened!"</string>
+    <string name="text_title_internet_connection">Check internet connection</string>
+    <string name="text_sub_title_internet_connection">Your internet seems to be disconnected, please check internet connection</string>
+    <string name="error_empty_cart">"Your basket is empty, how about adding some items?"</string>
+    <string name="checkout">Checkout</string>
+    <string name="price">Price</string>
+    <string name="product_details">Product details</string>
+    <string name="total_price">Total Price: %s</string>
+
+</resources>

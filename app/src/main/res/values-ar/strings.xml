@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">تسوق</string>
+    <string name="title_home">الرئيسية</string>
+    <string name="title_cart">السلة</string>
+    <string name="title_profile">الشخصية</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="username_error">اسم المستخدم غير صحيح</string>
+    <string name="password">كلمة السر</string>
+    <string name="password_error">كلمة السر غير صحيحه</string>
+    <string name="don_t_have_an_account">ليس لديك حساب?</string>
+    <string name="sign_up">انشاء</string>
+    <string name="text_sorry">"نأسف!"</string>
+    <string name="error_login_message">"اسم المستخدم او كلمة المرور غير صحيحة!"</string>
+    <string name="error_limit">"لقد استنفذت عدد المحاولات!"</string>
+    <string name="error_record_is_expired">"بيانات منتهية الصلاحية"</string>
+    <string name="text_message_forbidden">"العدد الأقصى للمحاولات. برجاء المحاولة لاحقا."</string>
+    <string name="text_message_record_exist">"هذه البيانات موجودة بالفعل"</string>
+    <string name="text_message_internal_server_error">"خطأ داخلي في السيرفر"</string>
+    <string name="text_message_unauthorized">"لم يتم تسجيل الدخول بعد. من فضلك حاول مرة أخرى."</string>
+    <string name="error_not_founded_exception">"غير موجود!"</string>
+    <string name="text_message_generic_error">"حدث خطاء ما!"</string>
+    <string name="text_title_internet_connection">الاتصال بالإنترنت</string>
+    <string name="text_sub_title_internet_connection">ربما تكون غير متصل بالإنترنت. من فضلك التأكد من الاتصال بالإنترنت</string>
+    <string name="error_empty_cart">"السلة فارغة! مارأيك في إضافة بعض المنتجات الآن؟"</string>
+    <string name="checkout">دفع</string>
+    <string name="price">السعر</string>
+    <string name="total_price">اجمالي : %s</string>
+
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10dp"
+    app:cardBackgroundColor="@color/background"
+    app:cardCornerRadius="@dimen/_5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_product"
+            android:layout_width="@dimen/_180dp"
+            android:layout_height="@dimen/_180dp"
+            android:background="@color/backgroundAd"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_network_error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30dp"
+            android:numStars="5"
+            android:rating="5"
+            android:scaleX=".4"
+            android:scaleY=".4"
+            android:textAlignment="viewStart"
+            android:transformPivotX="0dp"
+            android:transformPivotY="@dimen/_15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_product" />
+
+        <TextView
+            android:id="@+id/text_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:fontFamily="@font/light"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/textAd"
+            android:textSize="@dimen/_13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rating_bar"
+            tools:text="Brand Name" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:fontFamily="@font/reguler"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainText"
+            android:textSize="@dimen/_15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_category"
+            tools:text="Product Name" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:fontFamily="@font/light"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_name"
+            tools:text="Product Price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

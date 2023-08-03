@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5dp"
+    android:clickable="false"
+    android:focusable="false"
+    app:cardCornerRadius="4dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_product"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/textAd"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintStart_toStartOf="@+id/textName"
+            app:layout_constraintTop_toBottomOf="@+id/textName"
+            tools:text="LE24" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/bold"
+            android:maxWidth="150dp"
+            android:maxLength="120"
+            android:maxLines="1"
+            android:textColor="@color/mainText"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintEnd_toStartOf="@+id/cart_info"
+            app:layout_constraintStart_toEndOf="@id/image_product"
+            app:layout_constraintTop_toTopOf="@id/image_product"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cart_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonMinus"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_item_minus"
+                app:layout_constraintBottom_toBottomOf="@+id/textQty"
+                app:layout_constraintEnd_toStartOf="@id/textQty"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textQty"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/textQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:maxLength="6"
+                android:textColor="@color/textAd"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintEnd_toStartOf="@id/buttonPlus"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="15" />
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_item_plus"
+                app:layout_constraintBottom_toBottomOf="@+id/textQty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textQty"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textItemTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/buttonPlus"
+                app:layout_constraintStart_toStartOf="@id/buttonMinus"
+                app:layout_constraintTop_toBottomOf="@id/textQty"
+                tools:text="LE 15.00" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
