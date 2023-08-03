@@ -33,5 +33,10 @@
     <string name="product_details">Product details</string>
     <string name="log_out">Logout</string>
     <string name="do_you_want_to_logout">Do you want to logout?</string>
+    <string name="please_enter_valid_data">Please enter valid data</string>
+    <string name="please_enter_a_valid_email">Please Enter a valid email</string>
+    <string name="please_enter_the_password">Please Enter the password</string>
+    <string name="the_password_not_equal_to_the_confirm_password">The password not equal to the confirm password</string>
+    <string name="please_enter_a_valid_full_name">Please Enter a valid full name</string>
 
 </resources>

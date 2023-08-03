@@ -51,6 +51,7 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun goToHomeScreen() {
+        requireActivity().finish()
         startActivity(Intent(requireActivity(), MainActivity::class.java))
     }
 

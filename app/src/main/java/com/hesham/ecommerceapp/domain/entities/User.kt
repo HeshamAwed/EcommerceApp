@@ -6,7 +6,7 @@ import java.io.Serializable
 
 @Keep
 data class User(
-    @SerializedName("address")  val address: Address,
+    @SerializedName("address")  val address: Address?,
     @SerializedName("email")  val email: String,
     @SerializedName("id")  val id: Int,
     @SerializedName("name")  val name: Name,
@@ -15,13 +15,17 @@ data class User(
     @SerializedName("username")  val username: String
 ): Serializable{
     fun getFullName() = "${name.firstname} ${name.lastname}"
+
+    fun isValid() = email.isNotEmpty() && password.isNotEmpty() && name.isValid()
 }
 
 @Keep
 data class Name(
     @SerializedName("firstname") val firstname: String,
     @SerializedName("lastname") val lastname: String
-): Serializable
+): Serializable{
+    fun isValid() = firstname.isNotEmpty() && lastname.isNotEmpty()
+}
 
 @Keep
 data class Address(
@@ -41,5 +45,10 @@ data class Geolocation(
 @Keep
 data class UserToken(
     @SerializedName("token") val token: String,
+): Serializable
+
+@Keep
+data class UserId(
+    @SerializedName("id") val id: Int,
 ): Serializable
 

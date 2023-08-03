@@ -1,6 +1,7 @@
 package com.hesham.ecommerceapp.ui.auth
 
 import com.hesham.ecommerceapp.ui.auth.login.LoginViewModel
+import com.hesham.ecommerceapp.ui.auth.signup.SignupViewModel
 import com.hesham.ecommerceapp.ui.profile.ProfileViewModel
 import com.hesham.ecommerceapp.ui.splash.SplashViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -10,4 +11,5 @@ fun authModule() = module {
     viewModel { LoginViewModel(get()) }
     viewModel { SplashViewModel(get()) }
     viewModel { ProfileViewModel(get()) }
+    viewModel { SignupViewModel(get()) }
 }

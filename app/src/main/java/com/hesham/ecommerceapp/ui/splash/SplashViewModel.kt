@@ -16,7 +16,7 @@ class SplashViewModel(private val authRepository: AuthRepository) : ViewModel() 
     init {
         viewModelScope.launch {
             delay(3000)
-            _isLoggedInLiveData.postValue(authRepository.getToken().isNotEmpty())
+            _isLoggedInLiveData.postValue(authRepository.isLoggedIn())
         }
     }
 

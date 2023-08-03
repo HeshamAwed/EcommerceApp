@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
         <EditText
-            android:id="@+id/nameEt_signUpPage"
+            android:id="@+id/text_full_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="@dimen/_15sp"
@@ -45,7 +45,7 @@
             android:maxLines="1" />
         <EditText
             android:layout_marginTop="10dp"
-            android:id="@+id/emailEt_signUpPage"
+            android:id="@+id/text_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="15sp"
@@ -60,7 +60,7 @@
 
         <EditText
             android:layout_marginTop="10dp"
-            android:id="@+id/PassEt_signUpPage"
+            android:id="@+id/text_password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="15sp"
@@ -74,7 +74,7 @@
             android:maxLines="1" />
         <EditText
             android:layout_marginTop="10dp"
-            android:id="@+id/cPassEt_signUpPage"
+            android:id="@+id/text_confirm_password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="15sp"
@@ -125,5 +125,7 @@
 
     </LinearLayout>
 
-
+    <include
+        android:id="@+id/loading_layout"
+        layout="@layout/layout_loading" />
 </androidx.constraintlayout.widget.ConstraintLayout>

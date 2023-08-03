@@ -2,6 +2,7 @@ package com.hesham.ecommerceapp.domain.repositories
 
 import com.hesham.ecommerceapp.domain.entities.DtoLogin
 import com.hesham.ecommerceapp.domain.entities.User
+import com.hesham.ecommerceapp.domain.entities.UserId
 import com.hesham.ecommerceapp.domain.entities.UserToken
 import com.hesham.ecommerceapp.domain.gateways.local.LocalGateway
 import com.hesham.ecommerceapp.domain.gateways.remote.EcommerceGateway
@@ -11,11 +12,13 @@ import kotlinx.coroutines.flow.flow
 
 interface AuthRepository {
     suspend fun login(dtoLogin: DtoLogin): UserToken
-    suspend fun signUp(dtoUser: User): User
+    suspend fun signUp(dtoUser: User): UserId
     suspend fun getUser(): User
     fun logout()
+    fun isLoggedIn(): Boolean
     fun getToken(): String
     fun getUserId(): Int
+    fun setUserId(userId: Int)
     fun setToken(token: String)
 }
 
@@ -34,9 +37,17 @@ class AuthRepositoryImplementation(
         localGateway.logout()
     }
 
+    override fun isLoggedIn(): Boolean {
+      return  getToken().isNotEmpty() || getUserId() != 0
+    }
+
     override fun getToken() = localGateway.getToken()
     override fun getUserId() =
         localGateway.getUserId()
+
+    override fun setUserId(userId: Int) {
+        localGateway.setUserId(userId)
+    }
 
     override fun setToken(token: String) = localGateway.setToken(token)
 
